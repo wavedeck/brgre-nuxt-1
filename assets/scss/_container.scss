@@ -1,0 +1,36 @@
+@use 'breakpoints';
+
+.container {
+    width: 100%;
+}
+
+
+@media screen and (min-width: breakpoints.$screen-sm-min) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-md-min) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-lg-min) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-xl-min) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-2xl-min) {
+    .container {
+        max-width: 1440px;
+    }
+}

@@ -1,0 +1,123 @@
+@use 'breakpoints';
+
+header#main-header {
+    background-color: #fff;
+}
+
+#main-header {
+    .header-row-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .contact-info__link {
+        font-family: 'Exo', system-ui, sans-serif;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+
+    #header-mobile-menutoggle {
+        padding: 0.5rem 1rem;
+
+        .fa-bars {
+            font-size: 1.5rem;
+        }
+    }
+
+    #header-navigation {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        width: 18rem;
+        height: 100%;
+        flex-direction: column;
+        background-color: #203247;
+        transition: left 0.5s ease-in-out;
+        left: -100%;
+
+        &.open {
+            left: 0;
+        }
+    }
+
+    .header-navigation__logo {
+        height: 2.5rem;
+    }
+
+    .header-navigation__nav {
+        margin-top: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .header-navigation__navlist {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-navigation__navlink {
+        display: block;
+        padding: 1.25rem 0;
+        font-family: 'Exo', system-ui, sans-serif;
+
+        &.router-link-active {
+            color: #ADA48A;
+        }
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-lg-min) {
+    #main-header {
+        .header-row-1 {
+            padding: 2rem 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #header-mobile-menutoggle {
+            display: none;
+        }
+
+        #header-navigation {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: 100%;
+            background-color: #ADA48A;
+        }
+
+        .header-navigation__logo {
+           display: none;
+        }
+
+        .header-navigation__nav {
+            margin-top: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header-navigation__navlist {
+            flex-direction: row;
+        }
+
+        .header-navigation__navlink {
+            padding: 1rem 1.5rem;
+
+            &.router-link-active {
+                color: #fff;
+                background-color: #203247;
+            }
+        }
+    }
+}

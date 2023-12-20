@@ -1,0 +1,31 @@
+.bregtec-button {
+    color: #203247;
+    font-family: "Exo", system-ui, sans-serif;
+    border-radius: 5px;
+    padding: 1rem 4rem;
+    display: block;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
+.bregtec-button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%;
+    height: 110%;
+    background-image: url('/img/arrows.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bregtec-button:hover::after {
+    transform: translateX(300%);
+}

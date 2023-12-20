@@ -1,0 +1,9 @@
+@use "typography";
+@use "container";
+@use "header";
+@use "buttons";
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
