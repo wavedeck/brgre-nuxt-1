@@ -1,116 +1,81 @@
 <template>
-  <header class="bg-white">
-    <div
-      class="container mx-auto flex items-center justify-between p-4 lg:py-8"
-    >
+  <header id="main-header">
+    <div class="header-row-1 container mx-auto">
+      <!-- Logo -->
       <a href="/" aria-label="Zur Startseite">
         <img src="/img/bregtec_logo_color.svg" alt="" class="h-10 lg:h-16" />
       </a>
 
       <!-- Contact Info -->
-      <ul class="hidden gap-8 lg:flex">
+      <ul class="contact-info">
         <li>
-          <a href="tel:+41817561530" class="font-display text-sm uppercase">
+          <a href="tel:+41817561530" class="contact-info__link">
             <font-awesome-icon
               icon="fa-solid fa-phone"
               class="mr-2 text-secondary"
-            />+41&nbsp;817&nbsp;561&nbsp;530</a>
+            />
+            +41 81 756 15 30
+          </a>
         </li>
         <li>
-          <a
-            href="https://www.bregtec.com"
-            class="font-display text-sm uppercase"
-          >
+          <a href="https://www.bregtec.com" class="contact-info__link">
             <font-awesome-icon
               icon="fa-solid fa-house"
               class="mr-2 text-secondary"
             />
-            www.bregtec.com</a
-          >
+            www.bregtec.com
+          </a>
         </li>
         <li>
-          <a
-            href="mailto:info@bregtec.com"
-            class="font-display text-sm uppercase"
-          >
+          <a href="mailto:info@bregtec.com" class="contact-info__link">
             <font-awesome-icon
               icon="fa-solid fa-envelope"
               class="mr-2 text-secondary"
             />
-            info@bregtec.com</a
-          >
+            info@bregtec.com
+          </a>
         </li>
       </ul>
 
+      <!-- MobileMenuToggle -->
       <button
-        class="px-4 py-2 lg:hidden"
         id="header-mobile-menutoggle"
         aria-label="Navigation öffnen"
         type="button"
         @click="toggleMenu"
       >
-        <font-awesome-icon icon="fa-solid fa-bars" class="text-xl" />
+        <font-awesome-icon icon="fa-solid fa-bars" />
       </button>
     </div>
 
+
     <div
       id="header-navigation"
-      class="fixed top-0 z-[1000] flex h-full w-72 flex-col bg-primary transition-[left] duration-500 lg:relative lg:left-auto lg:top-auto lg:w-full lg:bg-secondary"
-      :class="isMenuOpen ? 'left-0' : '-left-full'"
+      :class="isMenuOpen ? 'open' : ''"
       :aria-hidden="!isMenuOpen && isMobile"
     >
       <div class="flex-1 px-4 pt-5 lg:pt-0">
-        <img src="/img/bregtec_logo_white.svg" alt="" class="h-10 lg:hidden" />
+        <img
+          src="/img/bregtec_logo_white.svg"
+          alt=""
+          class="header-navigation__logo"
+        />
 
-        <nav class="mt-8 uppercase text-white lg:container lg:mx-auto lg:mt-0">
-          <ul class="flex flex-col lg:flex-row">
-            <li>
-              <a href="/" class="block py-3 font-display lg:px-6 lg:py-4"
-                >Home</a
+        <nav class="header-navigation__nav container">
+          <ul class="header-navigation__navlist">
+            <li v-for="item in navItems">
+              <NuxtLink
+                :to="item.url"
+                class="header-navigation__navlink"
               >
-            </li>
-            <li>
-              <a
-                href="/produkte"
-                class="block py-3 font-display lg:px-6 lg:py-4"
-                >Produkte</a
-              >
-            </li>
-            <li>
-              <a
-                href="/dienstleistungen"
-                class="block bg-primary py-3 font-display lg:px-6 lg:py-4"
-                >Dienstleistungen</a
-              >
-            </li>
-            <li>
-              <a
-                href="/unternehmen"
-                class="block py-3 font-display lg:px-6 lg:py-4"
-                >Unternehmen</a
-              >
-            </li>
-            <li>
-              <a href="/kontakt" class="block py-3 font-display lg:px-6 lg:py-4"
-                >Kontakt</a
-              >
-            </li>
-            <li>
-              <a href="/news" class="block py-3 font-display lg:px-6 lg:py-4"
-                >News</a
-              >
-            </li>
-            <li>
-              <a
-                href="/downloads"
-                class="block py-3 font-display lg:px-6 lg:py-4"
-                >Downloads</a
-              >
+                {{ item.label }}
+              </NuxtLink>
             </li>
           </ul>
         </nav>
       </div>
 
+      <!-- MobileActions -->
       <ul class="flex w-full justify-between gap-[2px] lg:hidden">
         <li class="w-1/4">
           <button
@@ -162,6 +127,7 @@
         </li>
       </ul>
 
+      <!-- MobileMenuToggle -->
       <button
         id="header-mobile-menuclose"
         class="absolute right-2 top-3 p-4 lg:hidden"
@@ -188,6 +154,37 @@
 const isMenuOpen = ref(false);
 const isMobile = ref(false);
 
+const navItems = [
+  {
+    label: "Home",
+    url: "/",
+  },
+  {
+    label: "Produkte",
+    url: "/produkte",
+  },
+  {
+    label: "Dienstleistungen",
+    url: "/dienstleistungen",
+  },
+  {
+    label: "Unternehmen",
+    url: "/unternehmen",
+  },
+  {
+    label: "Kontakt",
+    url: "/kontakt",
+  },
+  {
+    label: "News",
+    url: "/news",
+  },
+  {
+    label: "Downloads",
+    url: "/downloads",
+  },
+];
+
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
@@ -196,13 +193,12 @@ const checkIsMobile = () => {
   isMobile.value = window.innerWidth < 768; // You can adjust the breakpoint as needed
 };
 
-// onMounted(() => {
-//   window.addEventListener('resize', checkIsMobile);
-//   checkIsMobile();
-// });
+onMounted(() => {
+  window.addEventListener("resize", checkIsMobile);
+  checkIsMobile();
+});
 
-// onBeforeUnmount(() => {
-//   window.removeEventListener('resize', checkIsMobile);
-// });
-
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", checkIsMobile);
+});
 </script>
