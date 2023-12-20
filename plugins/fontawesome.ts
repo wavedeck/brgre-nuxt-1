@@ -11,7 +11,9 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faPhone, faEnvelope, faBars, faMagnifyingGlass, faHouse, faXmark);
+import { faLinkedin, faFacebook, faInstagram, faTiktok, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
+library.add(faPhone, faEnvelope, faBars, faMagnifyingGlass, faHouse, faXmark, faLinkedin, faFacebook, faInstagram, faTiktok, faYoutube);
 
 // This is important, we are going to let Nuxt worry about the CSS
 config.autoAddCss = false;
