@@ -1,7 +1,8 @@
+import { NuxtLink } from '#build/components';
 <template>
   <footer id="main-footer">
-    <div class="bg-[#2E2E29] py-12" id="footer-row-1">
-      <div class="container mx-auto flex items-end">
+    <div class="footer-row-1">
+      <div class="footer-row-1__inner container mx-auto">
         <div class="flex-1">
           <img src="/img/bregtec_logo_white.svg" alt="" class="h-12" />
 
@@ -17,47 +18,57 @@
             <div>
               <ul class="flex gap-2">
                 <li>
-                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                  <a href="#">
+                    <font-awesome-icon icon="fab fa-linkedin" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#">
+                    <font-awesome-icon icon="fab fa-facebook" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#">
+                    <font-awesome-icon icon="fab fa-instagram" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#"><i class="fab fa-tiktok"></i></a>
+                  <a href="#">
+                    <font-awesome-icon icon="fab fa-tiktok" />
+                  </a>
                 </li>
                 <li>
-                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#">
+                    <font-awesome-icon icon="fab fa-youtube" />
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <ul class="mt-8 hidden gap-8 lg:flex">
+          <ul class="footer-contactinfo">
             <li>
               <a
                 href="tel:+41817561530"
                 class="font-display text-sm uppercase text-white"
-                ><i class="fas fa-phone mr-2 text-secondary"></i>+41 81 756 15
-                30</a
+              >
+                <font-awesome-icon icon="fas fa-phone" />+41 81 756 15 30</a
               >
             </li>
             <li>
               <a
                 href="https://www.bregtec.com"
                 class="font-display text-sm uppercase text-white"
-                ><i class="fas fa-home mr-2 text-secondary"></i
-                >www.bregtec.com</a
+              >
+                <font-awesome-icon icon="fas fa-home" />www.bregtec.com</a
               >
             </li>
             <li>
               <a
                 href="mailto:info@bregtec.com"
                 class="font-display text-sm uppercase text-white"
-                ><i class="fas fa-envelope mr-2 text-secondary"></i
-                >info@bregtec.com</a
+              >
+                <font-awesome-icon icon="fas fa-envelope" />info@bregtec.com</a
               >
             </li>
           </ul>
@@ -72,28 +83,28 @@
         </div>
       </div>
     </div>
-    <div class="bg-[#494941]" id="footer-row-2">
-      <div class="container mx-auto flex justify-end">
+    <div class="footer-row-2">
+      <div class="footer-row-2__inner container mx-auto">
         <ul class="flex gap-8">
           <li>
-            <a
-              href="/impressum"
+            <NuxtLink
+              to="/impressum"
               class="inline-block py-2 font-display text-sm uppercase text-white"
-              >Impressum</a
+              >Impressum</NuxtLink
             >
           </li>
           <li>
-            <a
-              href="/datenschutzerklaerung"
+            <NuxtLink
+              to="/datenschutzerklaerung"
               class="inline-block py-2 font-display text-sm uppercase text-white"
-              >DSGVO</a
+              >DSGVO</NuxtLink
             >
           </li>
           <li>
-            <a
-              href="/kontakt"
+            <NuxtLink
+              to="/kontakt"
               class="inline-block py-2 font-display text-sm uppercase text-white"
-              >Kontakt</a
+              >Kontakt</NuxtLink
             >
           </li>
         </ul>
