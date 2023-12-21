@@ -1,5 +1,5 @@
 .bregtec-button {
-    color: #203247;
+    background-color: #203247;
     font-family: "Exo", system-ui, sans-serif;
     border-radius: 5px;
     padding: 1rem 4rem;
@@ -10,6 +10,11 @@
     text-transform: uppercase;
     color: #fff;
     text-align: center;
+
+    &--secondary {
+        background-color: #ADA48A;
+        color: #000;
+    }
 }
 
 .bregtec-button::after {
