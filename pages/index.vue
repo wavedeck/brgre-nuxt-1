@@ -4,10 +4,10 @@
     <div class="hero-header">
       <div class="hero-header__content container mx-auto">
         <h1
-          class="relative p-4 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-hero-opaque md:max-w-xl md:before:-left-1/2 md:before:w-[150%] lg:max-w-5xl"
+          class="relative p-4 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[#203247c2] md:max-w-xl md:before:-left-[200%] md:before:w-[300%] lg:max-w-5xl"
         >
           <span
-            class="relative z-10 font-display text-2xl uppercase text-primary lg:text-3xl xl:text-4xl"
+            class="relative z-10 font-display text-2xl uppercase text-white lg:text-3xl xl:text-4xl"
           >
             Wo Innovation und Tradition in der Schweisstechnik
             aufeinandertreffen
