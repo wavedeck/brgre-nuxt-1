@@ -14,6 +14,14 @@ header#main-header {
 
     .contact-info {
         display: none;
+        li:hover {
+            background-color: #203247;
+            transition: 0.6s ease-in-out;
+            color: #fff;
+            svg {
+                color: white;
+            }
+        }
     }
 
     .contact-info__link {
@@ -60,6 +68,15 @@ header#main-header {
     .header-navigation__navlist {
         display: flex;
         flex-direction: column;
+
+        li:hover {
+            background-color: #203247;
+            transition: 0.6s ease-in-out;
+        }
+    }
+
+    .header-navigation__navlist li:hover {
+        background-color: #203247;
     }
 
     .header-navigation__navlink {
@@ -83,6 +100,9 @@ header#main-header {
             display: flex;
             align-items: center;
             gap: 2rem;
+        li {
+            padding: 0.25rem;
+        }
         }
 
         #header-mobile-menutoggle {

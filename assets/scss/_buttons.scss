@@ -1,5 +1,5 @@
 .bregtec-button {
-    color: #203247;
+    background-color: #203247;
     font-family: "Exo", system-ui, sans-serif;
     border-radius: 5px;
     padding: 1rem 4rem;
@@ -29,3 +29,21 @@
 .bregtec-button:hover::after {
     transform: translateX(300%);
 }
+
+.bregtec-button--dark {
+    z-index: 10;
+    border: solid 1px #ada48a;
+    transition: 0.6s ease-in-out;
+    &:hover {
+      background-color: rgb(0, 0, 0, 0.4);
+    }
+  }
+
+.bregtec-button--light {
+    z-index: 10;
+    border: solid 1px #203247;
+    transition: 0.6s ease-in-out;
+    &:hover {
+      background-color: rgb(0, 0, 0, 0.4);
+    }
+  }
