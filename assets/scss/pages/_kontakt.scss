@@ -1,0 +1,80 @@
+@use '../breakpoints';
+
+#kontakt-hero {
+    .hero-header {
+        background-image: url('/img/hero/hero_kontakt.webp');
+        background-position: center;
+        background-size: cover;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .hero-heading {
+        position: relative;
+        padding: 1rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-heading__inner {
+            position: relative;
+            z-index: 10;
+            font-family: 'Exo', system-ui, sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: #203247;
+        }
+    }
+
+    .hero-description {
+        background-color: #203247;
+        padding: 1rem;
+        color: #fff
+    }
+}
+
+
+@media screen and (min-width: breakpoints.$screen-md-min) {
+    #kontakt-hero {
+        .hero-heading {
+            max-width: 28rem;
+            padding: 2rem;
+
+            &::before {
+                content: '';
+                left: -200%;
+                width: 300%;
+            }
+        }
+
+        .hero-heading__inner {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: breakpoints.$screen-lg-min) {
+    #kontakt-hero {
+        .hero-header {
+            padding-top: 20rem;
+            padding-bottom: 10rem;
+        }
+
+        .hero-heading {
+            max-width: 48rem;
+            .hero-heading__inner {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
