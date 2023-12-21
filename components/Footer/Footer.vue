@@ -74,10 +74,10 @@ import { NuxtLink } from '#build/components';
           </ul>
         </div>
         <div>
-          <a href="#" class="bregtec-button w-full bg-secondary text-black"
+          <a href="#" class="bregtec-button bregtec-button--secondary w-full text-black"
             >Jetzt Kontaktieren</a
           >
-          <a href="#" class="bregtec-button mt-4 w-full bg-secondary text-black"
+          <a href="#" class="bregtec-button bregtec-button--secondary mt-4 w-ful text-black"
             >Jetzt Termin vereinbaren</a
           >
         </div>
