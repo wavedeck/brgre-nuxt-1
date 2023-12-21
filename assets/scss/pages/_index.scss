@@ -1,0 +1,82 @@
+@use '../breakpoints';
+
+#index-hero {
+    position: relative;
+
+    .hero-header {
+        background-image: url("/img_unoptimized/hero.jpeg");
+        background-position: 50% 35%;
+        background-size: cover;
+    }
+
+    .hero-header__content {
+        padding: 2rem;
+    }
+
+    .hero-description {
+        background-color: #203247;
+        padding: 2rem;
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: breakpoints.$screen-md-min) {
+    #index-hero {
+        .hero-header {
+            background-position: 50% 15%;
+        }
+
+        .hero-header__content {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+}
+
+@media screen and (min-width: breakpoints.$screen-lg-min) {
+    #index-hero {
+        .hero-header {
+            background-position: 50% 5%;
+        }
+
+        .hero-header__content {
+            padding-top: 10rem;
+            padding-bottom: 10rem;
+        }
+
+        .hero-description {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+}
+
+@media screen and (min-width: breakpoints.$screen-xl-min) {
+    #index-hero {
+        .hero-header {
+            background-position: 50% 25%;
+        }
+
+        .hero-header__content {
+            padding-top: 10rem;
+            padding-bottom: 10rem;
+        }
+    }
+
+}
+
+@media screen and (min-width: breakpoints.$screen-2xl-min) {
+    #index-hero {
+        .hero-header {
+            background-position: 50% 6%;
+        }
+
+        .hero-header__content {
+            padding-top: 15rem;
+            padding-bottom: 15rem;
+        }
+    }
+
+}
